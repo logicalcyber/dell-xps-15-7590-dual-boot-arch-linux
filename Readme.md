@@ -6,7 +6,7 @@ This guide documents my experience installing Manjaro Linux (encrypted) next to 
 As with the earlier Arch guide, my XPS-15 also contains an Intel i9 CPU, 32 gigs of memory, a 1TB disk and an OLED screen. 
 
 Key references: 
-1. The Official Arch install guide for the [XPS 7590](https://wiki.archlinux.org/index.php/Dell_XPS_15_7590) 
+1. The Official Arch install guide for the [XPS 7590](https://wiki.archlinux.org/index.php/Dell_XPS_15_7590). 
 2. The [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_Guide).
 
 ## Preparing Windows
@@ -14,14 +14,14 @@ Key references:
 Optional: Update your Windows drivers and [BIOS](https://www.dell.com/support/home/en-us/product-support/product/xps-15-7590-laptop/drivers). 
 
 **Step 1**
-Turn off the SSD hardware encryption (BitLocker) if it is "ON" by following this [guide.]https://www.dell.com/support/article/en-us/sln302845/how-to-enable-or-disable-bitlocker-with-tpm-in-windows?lang=en)
+Turn off the SSD hardware encryption (BitLocker) by following this [guide]https://www.dell.com/support/article/en-us/sln302845/how-to-enable-or-disable-bitlocker-with-tpm-in-windows?lang=en).
 
 Note: Full BitLocker may be "ON" or you may see "Used Space Only Encrypted".  You can verify the status of your disk encryption by running the following command as administrator from cmd: `manage-bde -status`.  If this is a brand new Dell and you only see "Used Space Only Encrypted" you can choose to continue without disabling BitLocker.
 
 For additional information you may read more [from Microsoft](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10). 
 
 **Step 2**
-Shrink the C drive to make space for Arch Linux. You can follow the steps in [this guide](https://www.digitalcitizen.life/resize-partition-windows). When you look with "Disk Management" you will see the following partitions:
+Shrink the C drive to make space for Arch Linux. You can follow the steps in [this guide](https://docs.microsoft.com/en-us/windows-server/storage/disk-management/shrink-a-basic-volume).  As an example, viewing in "Disk Management" my partitions looked like this before installation:
 
 * EFI -> 680mb
 * OS Windows -> 935gb
@@ -29,7 +29,7 @@ Shrink the C drive to make space for Arch Linux. You can follow the steps in [th
 * Recovery Image -> 15gb
 * Dell Support -> 1.3gb
 
-I have resized my OS Windows partition with 500000 bytes, which leaves 447gb for Windows and 488gb for Arch Linux_
+I resized my OS Windows partition with 500,000 bytes, which leaves 447 GB for Windows and 488 GB for Manjaro.
 
 **Step 3**
 Turn off the Fast Start-Up by [following this guide](https://www.windowscentral.com/how-disable-windows-10-fast-startup)
@@ -38,7 +38,7 @@ Turn off the Fast Start-Up by [following this guide](https://www.windowscentral.
 Change Windows to use UTC time [following this guide](https://wiki.archlinux.org/index.php/System_time#UTC_in_Windows)
 
 **Step 5**
-Turn off UEFI secure boot and change "Fastboot" to "Thorough". While booting your machine press `F2` when you see the Dell logo. When the BIOS loads up select "Secure Boot" -> "Secure Boot Enable" and untick the box on that screen. Then select "POST Behaviour" -> "Fastboot" and change from "Minimal" to "Thorough".
+Turn off UEFI secure boot and change "Fastboot" to "Thorough". While booting your machine press `F2` when you see the Dell logo. When the BIOS loads up select "Secure Boot" -> "Secure Boot Enable" and deslect the box on that screen. Then select "POST Behaviour" -> "Fastboot" and change from "Minimal" to "Thorough".
 
 **Step 6**
 Change SATA mode to "AHCI" in BIOS by [following this guide](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/)
@@ -46,10 +46,10 @@ Change SATA mode to "AHCI" in BIOS by [following this guide](https://triplescomp
 ## Pre-install verification
 
 **Step 1**
-Please download the [Arch Linux iso](https://www.archlinux.org/download/) and put it on a USB stick using [Rufus](https://rufus.ie/)
+Please download the [Manjaro Linux iso](https://manjaro.org/download/) and put it on a USB stick using [Rufus](https://rufus.ie/)
 
 **Step 2**
-Use the USB disk to boot into Arch to see if it works. Start your Dell and press `F12` to get the boot menu and select the USB stick from there.
+Use the USB disk to boot into Manjaro to see if it works. Start your Dell and press `F12` to get the boot menu and select the USB stick from there.
 
 **Step 3**
 Verify partitions on your disk. Running the `fdisk -l` command will show you all the partitions on the SSD, it should be something as following:
