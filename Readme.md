@@ -1,12 +1,16 @@
-# Dual boot Arch on Dell XPS 7590
+# Dual boot Manjaro Linux on Dell XPS 7590   
 
-This is a guide on how to run Arch Linux (encrypted) next to pre-installed Windows on your Dell XPS 7590. My XPS version is an Intel i9 CPU, 32gig of memory, 1TB disk and an OLED screen. The tutorial should work for all other hardware but you might need to adjust certain steps.
+This is a guide on how to run Manjaro Linux (encrypted) next to pre-installed Windows on your Dell XPS 7590.  This guide builds on the excellent earlier work done by Armin Coralic. 
 
-You can of course always look at the official Arch install guide for the [XPS 7590](https://wiki.archlinux.org/index.php/Dell_XPS_15_7590) and the [Arch Installation](https://wiki.archlinux.org/index.php/Installation_guide).
+My XPS version is an Intel i9 CPU, 32gig of memory, 1TB disk and an OLED screen. 
+
+The tutorial should work for all other hardware but you might need to adjust certain steps.
+
+You can of course always look at the official Arch install guide for the [XPS 7590](https://wiki.archlinux.org/index.php/Dell_XPS_15_7590) and the [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_Guide).
 
 ## Preparing Windows
 
-I encourage you to update your Windows and your [BIOS](https://www.dell.com/support/home/uk/en/ukbsdt1/product-support/product/xps-15-7590-laptop/drivers) but it is optional.
+Optional: Update your Windows and [BIOS.](https://www.dell.com/support/home/en-us/product-support/product/xps-15-7590-laptop/drivers) 
 
 **Step 1**
 Turn off the SSD (BitLocker) hardware encryption if it is "ON". It depends on what you have specified during Windows pre-installation if full BitLocker is "ON" or only the "Used Space Only Encrypted". You can read more [from Microsoft](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10). You can verify the status of your disk encryption by running the following command `manage-bde -status`. Be aware this needs to be run as Administrator in cmd.
@@ -22,7 +26,7 @@ Shrink the C drive to make space for Arch Linux. You can follow the steps in [th
 * Recovery Image -> 15gb
 * Dell Support -> 1.3gb
 
-I have resized my OS Windows partition with 500000 bytes, which leaves 447gb for Windows and 488gb for Arch Linux.
+I have resized my OS Windows partition with 500000 bytes, which leaves 447gb for Windows and 488gb for Arch Linux_
 
 **Step 3**
 Turn off the Fast Start-Up by [following this guide](https://www.windowscentral.com/how-disable-windows-10-fast-startup)
