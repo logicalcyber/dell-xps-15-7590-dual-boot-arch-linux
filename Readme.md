@@ -14,7 +14,7 @@ Key references:
 Optional: Update your Windows drivers and [BIOS](https://www.dell.com/support/home/en-us/product-support/product/xps-15-7590-laptop/drivers). 
 
 **Step 1**
-Turn off the SSD hardware encryption (BitLocker) by following this [guide]https://www.dell.com/support/article/en-us/sln302845/how-to-enable-or-disable-bitlocker-with-tpm-in-windows?lang=en).
+Turn off the SSD hardware encryption (BitLocker) by following this [guide](https://www.dell.com/support/article/en-us/sln302845/how-to-enable-or-disable-bitlocker-with-tpm-in-windows?lang=en).
 
 Note: Full BitLocker may be "ON" or you may see "Used Space Only Encrypted".  You can verify the status of your disk encryption by running the following command as administrator from cmd: `manage-bde -status`.  If this is a brand new Dell and you only see "Used Space Only Encrypted" you can choose to continue without disabling BitLocker.
 
@@ -32,16 +32,16 @@ Shrink the C drive to make space for Arch Linux. You can follow the steps in [th
 I resized my OS Windows partition with 500,000 bytes, which leaves 447 GB for Windows and 488 GB for Manjaro.
 
 **Step 3**
-Turn off the Fast Start-Up by [following this guide](https://www.windowscentral.com/how-disable-windows-10-fast-startup)
+Turn off the Fast Start-Up by [following this guide](https://www.windowscentral.com/how-disable-windows-10-fast-startup).
 
 **Step 4**
-Change Windows to use UTC time [following this guide](https://wiki.archlinux.org/index.php/System_time#UTC_in_Windows)
+Change Windows to use UTC time [following this guide](https://wiki.archlinux.org/index.php/System_time#UTC_in_Windows).
 
 **Step 5**
 Turn off UEFI secure boot and change "Fastboot" to "Thorough". While booting your machine press `F2` when you see the Dell logo. When the BIOS loads up select "Secure Boot" -> "Secure Boot Enable" and deslect the box on that screen. Then select "POST Behaviour" -> "Fastboot" and change from "Minimal" to "Thorough".
 
 **Step 6**
-Change SATA mode to "AHCI" in BIOS by [following this guide](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/)
+Change SATA mode to "AHCI" in BIOS by [following this guide](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/).
 
 ## Pre-install verification
 
