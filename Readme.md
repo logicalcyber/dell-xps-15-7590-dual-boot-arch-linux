@@ -1,22 +1,24 @@
 # Dual boot Manjaro Linux on Dell XPS 7590
 ## **DRAFT/INCOMPLETE** ##
 
-This is a guide on how to run Manjaro Linux (encrypted) next to pre-installed Windows on your Dell XPS 7590.  This guide builds on the excellent earlier work done by Armin Coralic. 
+This guide documents my experience installing Manjaro Linux (encrypted) next to pre-installed Windows on my Dell XPS 7590.  This guide builds on the excellent earlier work done by Armin Coralic and changes items necessary for a US-based Manjaro installation.  
 
-My XPS version is an Intel i9 CPU, 32gig of memory, 1TB disk and an OLED screen. 
+As with the earlier Arch guide, my XPS-15 also contains an Intel i9 CPU, 32 gigs of memory, a 1TB disk and an OLED screen. 
 
-The tutorial should work for all other hardware but you might need to adjust certain steps.
-
-You can of course always look at the official Arch install guide for the [XPS 7590](https://wiki.archlinux.org/index.php/Dell_XPS_15_7590) and the [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_Guide).
+Key references: 
+1. The Official Arch install guide for the [XPS 7590](https://wiki.archlinux.org/index.php/Dell_XPS_15_7590) 
+2. The [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_Guide).
 
 ## Preparing Windows
 
-Optional: Update your Windows and [BIOS.](https://www.dell.com/support/home/en-us/product-support/product/xps-15-7590-laptop/drivers) 
+Optional: Update your Windows drivers and [BIOS](https://www.dell.com/support/home/en-us/product-support/product/xps-15-7590-laptop/drivers). 
 
 **Step 1**
-Turn off the SSD (BitLocker) hardware encryption if it is "ON". It depends on what you have specified during Windows pre-installation if full BitLocker is "ON" or only the "Used Space Only Encrypted". You can read more [from Microsoft](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10). You can verify the status of your disk encryption by running the following command `manage-bde -status`. Be aware this needs to be run as Administrator in cmd.
+Turn off the SSD hardware encryption (BitLocker) if it is "ON" by following this [guide.]https://www.dell.com/support/article/en-us/sln302845/how-to-enable-or-disable-bitlocker-with-tpm-in-windows?lang=en)
 
-If BitLocker is enabled please [turn it off](http://users.isr.ist.utl.pt/~mbayat/hacks/how-to-remove-bitlocker-encryption-in-windows-10/) before continuing, you can enable BitLocker back again after you installed Arch Linux. If this is a brand new Dell and you only see "Used Space Only Encrypted" you can choose to continue without disabling BitLocker.
+Note: Full BitLocker may be "ON" or you may see "Used Space Only Encrypted".  You can verify the status of your disk encryption by running the following command as administrator from cmd: `manage-bde -status`.  If this is a brand new Dell and you only see "Used Space Only Encrypted" you can choose to continue without disabling BitLocker.
+
+For additional information you may read more [from Microsoft](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10). 
 
 **Step 2**
 Shrink the C drive to make space for Arch Linux. You can follow the steps in [this guide](https://www.digitalcitizen.life/resize-partition-windows). When you look with "Disk Management" you will see the following partitions:
