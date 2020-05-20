@@ -1,5 +1,5 @@
 # Dual boot Manjaro Linux on Dell XPS 7590
-## **DRAFT/INCOMPLETE** as of 19 May##
+## **DRAFT/INCOMPLETE** as of 19 May
 
 This guide documents my experience installing Manjaro Linux (encrypted) next to pre-installed Windows on my Dell XPS 7590.  This guide builds on the excellent earlier work done by Armin Coralic and changes items necessary for a US-based Manjaro installation.  
 
