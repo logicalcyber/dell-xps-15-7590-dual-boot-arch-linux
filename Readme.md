@@ -21,21 +21,13 @@ Note: Full BitLocker may be "ON" or you may see "Used Space Only Encrypted".  Yo
 For additional information you may read more [from Microsoft](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10). 
 
 **Step 2**
-Shrink the C drive to make space for Arch Linux. You can follow the steps in [this guide](https://docs.microsoft.com/en-us/windows-server/storage/disk-management/shrink-a-basic-volume).  As an example, viewing in "Disk Management" my partitions looked like this before installation:
-
-* EFI -> 680mb
-* OS Windows -> 935gb
-* Winretools -> 990mb
-* Recovery Image -> 15gb
-* Dell Support -> 1.3gb
-
-I resized my OS Windows partition with 500,000 bytes, which leaves 447 GB for Windows and 488 GB for Manjaro.
+Shrink the OS partition (usually C:\ drive) to make space for Manjaro Linux by following [this guide](https://docs.microsoft.com/en-us/windows-server/storage/disk-management/shrink-a-basic-volume). 
 
 **Step 3**
-Turn off the Fast Start-Up by [following this guide](https://www.windowscentral.com/how-disable-windows-10-fast-startup).
+Turn off Fast Start-Up by [following this guide](https://www.windowscentral.com/how-disable-windows-10-fast-startup).
 
 **Step 4**
-Change Windows to use UTC time [following this guide](https://wiki.archlinux.org/index.php/System_time#UTC_in_Windows).
+Change Windows to use UTC time by [following this guide](https://wiki.archlinux.org/index.php/System_time#UTC_in_Windows).
 
 **Step 5**
 Turn off UEFI secure boot and change "Fastboot" to "Thorough". While booting your machine press `F2` when you see the Dell logo. When the BIOS loads up select "Secure Boot" -> "Secure Boot Enable" and deslect the box on that screen. Then select "POST Behaviour" -> "Fastboot" and change from "Minimal" to "Thorough".
@@ -49,7 +41,7 @@ Change SATA mode to "AHCI" in BIOS by [following this guide](https://triplescomp
 Please download the [Manjaro Linux iso](https://manjaro.org/download/) and put it on a USB stick using [Rufus](https://rufus.ie/)
 
 **Step 2**
-Use the USB disk to boot into Manjaro to see if it works. Start your Dell and press `F12` to get the boot menu and select the USB stick from there.
+Use the USB disk to boot into Manjaro. Start your Dell and press `F12` to get the boot menu and select the USB stick from there.
 
 **Step 3**
 Verify partitions on your disk. Running the `fdisk -l` command will show you all the partitions on the SSD, it should be something as following:
@@ -63,7 +55,7 @@ Verify partitions on your disk. Running the `fdisk -l` command will show you all
 
 Notice how you don't see the free space of 488gb for Arch. You can execute `cfdisk /dev/nvme0n1` to visually see if there is free space left on the disk, in my case I can see Free space of 488gb.
 
-## Installing Arch
+## Installing Majaro
 
 We will reuse the existing EFI volume, create an unencrypted /boot volume and an encrypted LVM with Swap space and /root in it. We need /boot outside of the encrypted partition because it simplifies the boot process. It isn't that big of a security issue because it's only the kernel which is the /boot.
 
