@@ -1,12 +1,13 @@
-# Dual boot Manjaro Linux on Dell XPS 7590
-## **DRAFT/INCOMPLETE** as of 22 May
+# **DRAFT/INCOMPLETE** as of 22 May: Dual boot Manjaro Linux on Dell XPS 7590
 
 This guide builds on the excellent earlier work done by Armin Coralic and documents my experience installing Manjaro Linux (encrypted) next to pre-installed Windows on my Dell XPS 7590. I have changed those items necessary for a US-based Manjaro installation.  
 
 As with the earlier Arch guide, my XPS-15 also contains an Intel i9 CPU, 32 gigs of memory, a 1TB disk, and an OLED screen. 
 
-Key references: 
+## Key references: 
+
 1. The Official Arch install guide for the [XPS 7590](https://wiki.archlinux.org/index.php/Dell_XPS_15_7590). 
+
 2. The [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_Guide).
 
 ## Preparing Windows
