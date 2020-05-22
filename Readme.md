@@ -1,15 +1,19 @@
 # Dual boot Manjaro Linux on Dell XPS 7590
-## **DRAFT/INCOMPLETE** as of 19 May
+## **DRAFT/INCOMPLETE** as of 22 May
 
-This guide documents my experience installing Manjaro Linux (encrypted) next to pre-installed Windows on my Dell XPS 7590.  This guide builds on the excellent earlier work done by Armin Coralic and changes items necessary for a US-based Manjaro installation.  
+This guide builds on the excellent earlier work done by Armin Coralic and documents my experience installing Manjaro Linux (encrypted) next to pre-installed Windows on my Dell XPS 7590. I have changed those items necessary for a US-based Manjaro installation.  
 
-As with the earlier Arch guide, my XPS-15 also contains an Intel i9 CPU, 32 gigs of memory, a 1TB disk and an OLED screen. 
+As with the earlier Arch guide, my XPS-15 also contains an Intel i9 CPU, 32 gigs of memory, a 1TB disk, and an OLED screen. 
 
 Key references: 
 1. The Official Arch install guide for the [XPS 7590](https://wiki.archlinux.org/index.php/Dell_XPS_15_7590). 
 2. The [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_Guide).
 
 ## Preparing Windows
+
+1. Back up all your files and have a rescue disk ready.
+
+2. During reboots, you will likely be presented with a login screen that uses a *local* account. Make sure you have the password!
 
 Optional: Update your Windows drivers and [BIOS](https://www.dell.com/support/home/en-us/product-support/product/xps-15-7590-laptop/drivers). 
 
@@ -53,7 +57,7 @@ Verify partitions on your disk. Running the `fdisk -l` command will show you all
 * /dev/nvme0n1p5 -> Recovery Image
 * /dev/nvme0n1p6 -> Dell Support
 
-Notice how you don't see the free space of 488gb for Arch. You can execute `cfdisk /dev/nvme0n1` to visually see if there is free space left on the disk, in my case I can see Free space of 488gb.
+Notice how you don't see the free space of 488gb for Manjaro. You can execute `cfdisk /dev/nvme0n1` to visually see if there is free space left on the disk, in my case I can see Free space of 488gb.
 
 ## Installing Majaro
 
