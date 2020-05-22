@@ -4,7 +4,7 @@ This guide builds on the excellent earlier work done by Armin Coralic and docume
 
 As with the earlier Arch guide, my XPS-15 also contains an Intel i9 CPU, 32 gigs of memory, a 1TB disk, and an OLED screen. 
 
-## Key references: 
+## Key References: 
 
 1. The Official Arch install guide for the [XPS 7590](https://wiki.archlinux.org/index.php/Dell_XPS_15_7590). 
 
@@ -40,7 +40,7 @@ Turn off UEFI secure boot and change "Fastboot" to "Thorough". While booting you
 **Step 6**
 Change SATA mode to "AHCI" in BIOS by [following this guide](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/).
 
-## Pre-install verification
+## Manjaro Pre-Install Verification
 
 **Step 1**
 Please download the [Manjaro Linux iso](https://manjaro.org/download/) and put it on a USB stick using [Rufus](https://rufus.ie/)
@@ -60,7 +60,7 @@ Verify partitions on your disk. Running the `fdisk -l` command will show you all
 
 Notice how you don't see the free space of 488gb for Manjaro. You can execute `cfdisk /dev/nvme0n1` to visually see if there is free space left on the disk, in my case I can see Free space of 488gb.
 
-## Installing Majaro
+## Installing Manjaro
 
 We will reuse the existing EFI volume, create an unencrypted /boot volume and an encrypted LVM with Swap space and /root in it. We need /boot outside of the encrypted partition because it simplifies the boot process. It isn't that big of a security issue because it's only the kernel which is the /boot.
 
