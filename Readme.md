@@ -28,11 +28,7 @@ As with the earlier Arch guide, my XPS-15 also contains an Intel i9 CPU, 32 gigs
 
 4. Shrink the OS partition (usually C:\ drive) to make space for Manjaro Linux by following [this guide](https://docs.microsoft.com/en-us/windows-server/storage/disk-management/shrink-a-basic-volume). 
 
-5. Turn off the SSD hardware encryption (BitLocker) by following this [guide](https://www.dell.com/support/article/en-us/sln302845/how-to-enable-or-disable-bitlocker-with-tpm-in-windows?lang=en).
-
-Note: Full BitLocker may be "ON" or you may see "Used Space Only Encrypted".  You can verify the status of your disk encryption by running the following command as administrator from cmd: `manage-bde -status`.  If this is a brand new Dell and you only see "Used Space Only Encrypted" you can choose to continue without disabling BitLocker.
-
-For additional information you may read more [from Microsoft](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10). 
+5. Turn off the SSD hardware encryption (BitLocker) by following this [guide](https://www.dell.com/support/article/en-us/sln302845/how-to-enable-or-disable-bitlocker-with-tpm-in-windows?lang=en).  Note: Full BitLocker may be "ON" or you may see "Used Space Only Encrypted".  You can verify the status of your disk encryption by running the following command as administrator from cmd: `manage-bde -status`.  If this is a brand new Dell and you only see "Used Space Only Encrypted" you can choose to continue without disabling BitLocker.  For additional information you may read more [from Microsoft](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10). 
 
 6. Turn off UEFI secure boot and change "Fastboot" to "Thorough". While booting your machine press `F2` when you see the Dell logo. When the BIOS loads up select "Secure Boot" -> "Secure Boot Enable" and deslect the box on that screen. Then select "POST Behaviour" -> "Fastboot" and change from "Minimal" to "Thorough".
 
