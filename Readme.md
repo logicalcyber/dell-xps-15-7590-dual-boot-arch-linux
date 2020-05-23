@@ -8,7 +8,7 @@ As with the earlier Arch guide, my XPS-15 also contains an Intel i9 CPU, 32 gigs
 
 1. The Official Arch install guide for the [XPS 7590](https://wiki.archlinux.org/index.php/Dell_XPS_15_7590). 
 
-2. The [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_Guide).
+2. The [Manjaro User Guide](https://manjaro.org/support/userguide/).
 
 ## Prepare Yourself:
 
