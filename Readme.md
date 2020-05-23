@@ -36,12 +36,11 @@ As with the earlier Arch guide, my XPS-15 also contains an Intel i9 CPU, 32 gigs
 
 ## Manjaro Pre-Install 
 
-1.Please download the [Manjaro Linux iso](https://manjaro.org/download/) and put it on a USB stick using [Etcher](https://www.balena.io/etcher/)
+1. Please download the [Manjaro Linux iso](https://manjaro.org/download/) and put it on a USB stick using [Etcher](https://www.balena.io/etcher/)
 
 2. Use the USB disk to boot into Manjaro. 
 
-**Step 3**
-Verify partitions on your disk. Running the `fdisk -l` command will show you all the partitions on the SSD, it should be something as following:
+3. Verify partitions on your disk. Running the `fdisk -l` command will show you all the partitions on the SSD, it should be something as following:
 
 * /dev/nvme0n1p1 -> EFI
 * /dev/nvme0n1p2 -> Microsoft reserved (128mb)
