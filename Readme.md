@@ -10,43 +10,39 @@ As with the earlier Arch guide, my XPS-15 also contains an Intel i9 CPU, 32 gigs
 
 2. The [Arch Installation Guide](https://wiki.archlinux.org/index.php/Installation_Guide).
 
-## Preparing Windows
+## Prepare Yourself:
 
-1. Back up all your files and have a rescue disk ready.
+1. Back up all your files and have a Windows rescue disk ready.
 
-2. During reboots, you will likely be presented with a login screen that uses a *local* account. Make sure you have the password!
+2. During safemode reboot, you may be presented with a login screen that uses a *local* account. Make sure you have the password!
 
-Optional: Update your Windows drivers and [BIOS](https://www.dell.com/support/home/en-us/product-support/product/xps-15-7590-laptop/drivers). 
+3. Make some coffee (or drink of choice)! 
 
-**Step 1**
-Turn off the SSD hardware encryption (BitLocker) by following this [guide](https://www.dell.com/support/article/en-us/sln302845/how-to-enable-or-disable-bitlocker-with-tpm-in-windows?lang=en).
+## Prepare Windows:
+
+1. Update your Windows drivers and [BIOS](https://www.dell.com/support/home/en-us/product-support/product/xps-15-7590-laptop/drivers). 
+
+2. Change SATA mode to "AHCI" in BIOS by [following this guide](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/).
+
+3. Turn off Fast Start-Up by [following this guide](https://www.windowscentral.com/how-disable-windows-10-fast-startup).
+
+4. Shrink the OS partition (usually C:\ drive) to make space for Manjaro Linux by following [this guide](https://docs.microsoft.com/en-us/windows-server/storage/disk-management/shrink-a-basic-volume). 
+
+5. Turn off the SSD hardware encryption (BitLocker) by following this [guide](https://www.dell.com/support/article/en-us/sln302845/how-to-enable-or-disable-bitlocker-with-tpm-in-windows?lang=en).
 
 Note: Full BitLocker may be "ON" or you may see "Used Space Only Encrypted".  You can verify the status of your disk encryption by running the following command as administrator from cmd: `manage-bde -status`.  If this is a brand new Dell and you only see "Used Space Only Encrypted" you can choose to continue without disabling BitLocker.
 
 For additional information you may read more [from Microsoft](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10). 
 
-**Step 2**
-Shrink the OS partition (usually C:\ drive) to make space for Manjaro Linux by following [this guide](https://docs.microsoft.com/en-us/windows-server/storage/disk-management/shrink-a-basic-volume). 
+6. Turn off UEFI secure boot and change "Fastboot" to "Thorough". While booting your machine press `F2` when you see the Dell logo. When the BIOS loads up select "Secure Boot" -> "Secure Boot Enable" and deslect the box on that screen. Then select "POST Behaviour" -> "Fastboot" and change from "Minimal" to "Thorough".
 
-**Step 3**
-Turn off Fast Start-Up by [following this guide](https://www.windowscentral.com/how-disable-windows-10-fast-startup).
+7. Change Windows to use UTC time by [following this guide](https://wiki.archlinux.org/index.php/System_time#UTC_in_Windows).  
 
-**Step 4**
-Change Windows to use UTC time by [following this guide](https://wiki.archlinux.org/index.php/System_time#UTC_in_Windows).
+## Manjaro Pre-Install 
 
-**Step 5**
-Turn off UEFI secure boot and change "Fastboot" to "Thorough". While booting your machine press `F2` when you see the Dell logo. When the BIOS loads up select "Secure Boot" -> "Secure Boot Enable" and deslect the box on that screen. Then select "POST Behaviour" -> "Fastboot" and change from "Minimal" to "Thorough".
+1.Please download the [Manjaro Linux iso](https://manjaro.org/download/) and put it on a USB stick using [Etcher](https://www.balena.io/etcher/)
 
-**Step 6**
-Change SATA mode to "AHCI" in BIOS by [following this guide](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/).
-
-## Manjaro Pre-Install Verification
-
-**Step 1**
-Please download the [Manjaro Linux iso](https://manjaro.org/download/) and put it on a USB stick using [Rufus](https://rufus.ie/)
-
-**Step 2**
-Use the USB disk to boot into Manjaro. Start your Dell and press `F12` to get the boot menu and select the USB stick from there.
+2. Use the USB disk to boot into Manjaro. 
 
 **Step 3**
 Verify partitions on your disk. Running the `fdisk -l` command will show you all the partitions on the SSD, it should be something as following:
@@ -60,7 +56,7 @@ Verify partitions on your disk. Running the `fdisk -l` command will show you all
 
 Notice how you don't see the free space of 488gb for Manjaro. You can execute `cfdisk /dev/nvme0n1` to visually see if there is free space left on the disk, in my case I can see Free space of 488gb.
 
-## Installing Manjaro
+## Manjaro Install
 
 We will reuse the existing EFI volume, create an unencrypted /boot volume and an encrypted LVM with Swap space and /root in it. We need /boot outside of the encrypted partition because it simplifies the boot process. It isn't that big of a security issue because it's only the kernel which is the /boot.
 
